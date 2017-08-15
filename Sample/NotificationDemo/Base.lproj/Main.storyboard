@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NotificationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CHi-Ls-JbD">
+                                <rect key="frame" x="16" y="209.5" width="343" height="248.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coF-UG-bPn">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dht-JM-Zlc">
+                                        <rect key="frame" x="0.0" y="28.5" width="343" height="30"/>
+                                        <state key="normal" title="Clear Device Mode"/>
+                                        <connections>
+                                            <action selector="configureUndefinedMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T3P-r9-mNa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vQ-r3-HAM">
+                                        <rect key="frame" x="0.0" y="66.5" width="343" height="30"/>
+                                        <state key="normal" title="Primary Device Mode"/>
+                                        <connections>
+                                            <action selector="configurePrimaryMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GZR-ze-AXG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1E6-L1-cHh">
+                                        <rect key="frame" x="0.0" y="104.5" width="343" height="30"/>
+                                        <state key="normal" title="Secondary Device Mode"/>
+                                        <connections>
+                                            <action selector="configureSecondaryMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pJf-Vq-5Kf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trb-3y-HEP">
+                                        <rect key="frame" x="0.0" y="142.5" width="343" height="30"/>
+                                        <state key="normal" title="Known Notification with Attachment"/>
+                                        <connections>
+                                            <action selector="sendKnownNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="amY-u3-yJZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaC-8C-wRq">
+                                        <rect key="frame" x="0.0" y="180.5" width="343" height="30"/>
+                                        <state key="normal" title="Unknown Notification with Attachment"/>
+                                        <connections>
+                                            <action selector="sendUnknownNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cag-PJ-Uus"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlm-Xt-tNi" userLabel="Repeating Notification Button">
+                                        <rect key="frame" x="0.0" y="218.5" width="343" height="30"/>
+                                        <state key="normal" title="Repeating Notification"/>
+                                        <connections>
+                                            <action selector="sendRepeatingNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HLg-Eg-YaZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CHi-Ls-JbD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Hvo-Np-WqX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CHi-Ls-JbD" secondAttribute="trailing" id="RP7-R7-9ef"/>
+                            <constraint firstItem="CHi-Ls-JbD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mRI-VG-wJF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="defaultMode" destination="Dht-JM-Zlc" id="Fng-KQ-32i"/>
+                        <outlet property="knownNotificationButton" destination="trb-3y-HEP" id="wcP-qz-D4Y"/>
+                        <outlet property="primaryMode" destination="0vQ-r3-HAM" id="h9r-Og-yje"/>
+                        <outlet property="repeatingNotificationButton" destination="xlm-Xt-tNi" id="nWE-f6-UI3"/>
+                        <outlet property="secondaryMode" destination="1E6-L1-cHh" id="OTp-cQ-gXt"/>
+                        <outlet property="statusLabel" destination="coF-UG-bPn" id="7iN-4F-1mf"/>
+                        <outlet property="unknownNotificationButton" destination="TaC-8C-wRq" id="KAD-NR-2Na"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

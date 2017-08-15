@@ -1,0 +1,21 @@
+{
+    "aps": {
+        "alert": {
+            "body": "Push message body",
+            "title": "Push title"
+        },
+        "category": "primaryMode",
+        "sound": "default"
+    },
+    
+    "WatchKit Simulator Actions": [
+        {
+            "identifier": "call",
+            "title": "Call"
+        },
+       {
+           "identifier": "modal",
+           "title": "Modal"
+       }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "aps": {
+        "alert": {
+            "body": "Push message body",
+            "title": "Push title"
+        },
+        "sound": "default",
+        "category": "secondaryMode"
+    },
+}

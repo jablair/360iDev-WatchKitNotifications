@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13178.6" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13045"/>
+    </dependencies>
+    <scenes>
+        <!--InterfaceController-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="InterfaceController" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="NotificationDemo_WatchKit_Extension">
+                    <items>
+                        <group alignment="center" verticalAlignment="center" layout="vertical" id="efK-gp-04p">
+                            <items>
+                                <label alignment="left" text="Loading…" textAlignment="center" numberOfLines="0" id="TE1-du-Ao8"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="MnC-of-hmj">
+                            <items>
+                                <label alignment="center" text="Primary Mode" id="7jf-2y-So4"/>
+                                <button width="1" alignment="left" title="Show Detail" id="PTP-jd-Spc">
+                                    <connections>
+                                        <segue destination="PZh-0v-hDz" kind="push" id="yaA-As-XwM"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="Local Notification" id="1fn-Hw-8ed">
+                                    <connections>
+                                        <action selector="requestLocalNotification" destination="AgC-eL-Hgc" id="RGC-wh-pca"/>
+                                    </connections>
+                                </button>
+                                <button width="1" alignment="left" title="Repeating Notification" id="0zI-1s-R7R">
+                                    <connections>
+                                        <action selector="requestRepeatingNotification" destination="AgC-eL-Hgc" id="mOF-z5-U84"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="center" layout="vertical" id="RV8-fz-sri">
+                            <items>
+                                <label alignment="center" text="Secondary Mode" textAlignment="center" numberOfLines="0" id="IZK-aT-GgO"/>
+                                <label width="1" alignment="center" hidden="YES" text="Notification Processed" textAlignment="center" numberOfLines="0" id="yNP-p6-vqN"/>
+                                <label width="1" alignment="center" hidden="YES" text="Date Label" textAlignment="center" id="TrK-5S-Q7K"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="notificationReceivedDateLabel" destination="TrK-5S-Q7K" id="kRx-mo-GGS"/>
+                        <outlet property="notificationReceivedLabel" destination="yNP-p6-vqN" id="iZc-Dw-TPy"/>
+                        <outlet property="primaryInterfaceGroup" destination="MnC-of-hmj" id="XUt-bT-Ypq"/>
+                        <outlet property="secondaryInterfaceGroup" destination="RV8-fz-sri" id="D0Z-kw-ztI"/>
+                        <outlet property="undefinedInterfaceGroup" destination="efK-gp-04p" id="66f-Yh-IXP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--DetailInterfaceController-->
+        <scene sceneID="b1q-ei-l4t">
+            <objects>
+                <controller identifier="DetailInterfaceController" id="PZh-0v-hDz" customClass="DetailInterfaceController" customModule="NotificationDemo_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="0" id="pIY-Nk-Wh9"/>
+                        <label width="1" alignment="center" verticalAlignment="center" text="Date Label" textAlignment="center" numberOfLines="0" id="cEz-64-4t8"/>
+                    </items>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="pIY-Nk-Wh9" id="N9I-OP-lQO"/>
+                        <outlet property="detailLabel" destination="cEz-64-4t8" id="Sh1-YM-yjo"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label width="1" alignment="left" text="Alert Label" textAlignment="center" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="primaryMode" id="JfB-70-Muf"/>
+                    <color key="backgroundColor" red="0.80392156859999997" green="0.1764705882" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="PVf-Xs-1Rf">
+            <objects>
+                <notificationController id="l12-u9-2HX">
+                    <items>
+                        <label width="1" alignment="left" text="Alert Label" textAlignment="center" id="rvj-dn-mwD"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="secondaryMode" id="qUA-oz-Xif"/>
+                    <color key="backgroundColor" red="0.80392156859999997" green="0.1764705882" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="rvj-dn-mwD" id="ZIi-Yg-hwh"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="221" y="920"/>
+        </scene>
+        <!--Primary Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="PrimaryNotificationController" customModule="NotificationDemo_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Label" textAlignment="center" id="jba-FQ-hcg"/>
+                        <label width="1" alignment="left" text="Label" textAlignment="center" id="CWj-Vd-QbH"/>
+                        <imageView width="1" alignment="left" id="QqD-Zd-yRy"/>
+                    </items>
+                    <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                    <connections>
+                        <outlet property="bodyLabel" destination="jba-FQ-hcg" id="8Jx-bk-Uk6"/>
+                        <outlet property="dateLabel" destination="CWj-Vd-QbH" id="e3U-Jg-xz1"/>
+                        <outlet property="notificationImage" destination="QqD-Zd-yRy" id="xjA-mD-g7N"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
